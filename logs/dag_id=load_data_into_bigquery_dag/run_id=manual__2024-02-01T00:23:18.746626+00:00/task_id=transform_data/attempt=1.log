@@ -1,0 +1,14 @@
+[2024-02-01T00:23:25.923+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_into_bigquery_dag.transform_data manual__2024-02-01T00:23:18.746626+00:00 [queued]>
+[2024-02-01T00:23:25.927+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_into_bigquery_dag.transform_data manual__2024-02-01T00:23:18.746626+00:00 [queued]>
+[2024-02-01T00:23:25.927+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2024-02-01T00:23:25.937+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): transform_data> on 2024-02-01 00:23:18.746626+00:00
+[2024-02-01T00:23:25.940+0000] {standard_task_runner.py:60} INFO - Started process 14416 to run task
+[2024-02-01T00:23:25.942+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'load_data_into_bigquery_dag', 'transform_data', 'manual__2024-02-01T00:23:18.746626+00:00', '--job-id', '135', '--raw', '--subdir', 'DAGS_FOLDER/load_data_into_bigquery_dag.py', '--cfg-path', '/tmp/tmpokz0s8o5']
+[2024-02-01T00:23:25.943+0000] {standard_task_runner.py:88} INFO - Job 135: Subtask transform_data
+[2024-02-01T00:23:25.966+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_into_bigquery_dag.transform_data manual__2024-02-01T00:23:18.746626+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-02-01T00:23:26.003+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='load_data_into_bigquery_dag' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:23:18.746626+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-01T00:23:18.746626+00:00'
+[2024-02-01T00:23:26.004+0000] {logging_mixin.py:188} INFO - Performing transformations in BigQuery...
+[2024-02-01T00:23:26.004+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-02-01T00:23:26.007+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=load_data_into_bigquery_dag, task_id=transform_data, execution_date=20240201T002318, start_date=20240201T002325, end_date=20240201T002326
+[2024-02-01T00:23:26.034+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-02-01T00:23:26.043+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

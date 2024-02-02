@@ -1,0 +1,15 @@
+[2024-01-31T11:26:59.625+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_analysis_dag.process_stock_data manual__2024-01-31T11:26:50.645544+00:00 [queued]>
+[2024-01-31T11:26:59.629+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_analysis_dag.process_stock_data manual__2024-01-31T11:26:50.645544+00:00 [queued]>
+[2024-01-31T11:26:59.629+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2024-01-31T11:26:59.638+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): process_stock_data> on 2024-01-31 11:26:50.645544+00:00
+[2024-01-31T11:26:59.641+0000] {standard_task_runner.py:60} INFO - Started process 2577 to run task
+[2024-01-31T11:26:59.642+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'stock_analysis_dag', 'process_stock_data', 'manual__2024-01-31T11:26:50.645544+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/stock_analysis_dag.py', '--cfg-path', '/tmp/tmp80usk5gp']
+[2024-01-31T11:26:59.643+0000] {standard_task_runner.py:88} INFO - Job 20: Subtask process_stock_data
+[2024-01-31T11:26:59.662+0000] {task_command.py:423} INFO - Running <TaskInstance: stock_analysis_dag.process_stock_data manual__2024-01-31T11:26:50.645544+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-01-31T11:26:59.699+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='onatpostac@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_analysis_dag' AIRFLOW_CTX_TASK_ID='process_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T11:26:50.645544+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-31T11:26:50.645544+00:00'
+[2024-01-31T11:26:59.715+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-01-31T11:26:59.716+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-01-31T11:27:00.087+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-31T11:27:00.093+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=stock_analysis_dag, task_id=process_stock_data, execution_date=20240131T112650, start_date=20240131T112659, end_date=20240131T112700
+[2024-01-31T11:27:00.135+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-31T11:27:00.145+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

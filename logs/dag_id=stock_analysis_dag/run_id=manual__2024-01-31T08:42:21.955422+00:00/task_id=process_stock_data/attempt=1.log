@@ -1,0 +1,36 @@
+[2024-01-31T08:51:33.519+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_analysis_dag.process_stock_data manual__2024-01-31T08:42:21.955422+00:00 [queued]>
+[2024-01-31T08:51:33.715+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_analysis_dag.process_stock_data manual__2024-01-31T08:42:21.955422+00:00 [queued]>
+[2024-01-31T08:51:33.715+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2024-01-31T08:51:33.744+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): process_stock_data> on 2024-01-31 08:42:21.955422+00:00
+[2024-01-31T08:51:33.752+0000] {standard_task_runner.py:60} INFO - Started process 215358 to run task
+[2024-01-31T08:51:33.763+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'stock_analysis_dag', 'process_stock_data', 'manual__2024-01-31T08:42:21.955422+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/stock_analysis_dag.py', '--cfg-path', '/tmp/tmp2khbjbcd']
+[2024-01-31T08:51:33.764+0000] {standard_task_runner.py:88} INFO - Job 14: Subtask process_stock_data
+[2024-01-31T08:51:34.003+0000] {task_command.py:423} INFO - Running <TaskInstance: stock_analysis_dag.process_stock_data manual__2024-01-31T08:42:21.955422+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-01-31T08:51:35.527+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='onatpostac@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_analysis_dag' AIRFLOW_CTX_TASK_ID='process_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T08:42:21.955422+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-31T08:42:21.955422+00:00'
+[2024-01-31T08:51:35.974+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-01-31T08:51:35.990+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-01-31T08:51:37.480+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/deprojectue/airflow_demo/dags/stock_analysis_dag.py", line 97, in process_stock_data
+    errors = client.insert_rows_json(table_ref, records)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/cloud/bigquery/client.py", line 3778, in insert_rows_json
+    response = self._call_api(
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/cloud/bigquery/client.py", line 818, in _call_api
+    return call()
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/api_core/retry.py", line 372, in retry_wrapped_func
+    return retry_target(
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/api_core/retry.py", line 207, in retry_target
+    result = target()
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/cloud/_http/__init__.py", line 494, in api_request
+    raise exceptions.from_http_response(response)
+google.api_core.exceptions.Forbidden: 403 POST https://bigquery.googleapis.com/bigquery/v2/projects/dataengineeringfinal-411911/datasets/ibm_stock/tables/ibm_Stock_table/insertAll?prettyPrint=false: Access Denied: Dataset dataengineeringfinal-411911:ibm_stock: Permission bigquery.datasets.get denied on dataset dataengineeringfinal-411911:ibm_stock (or it may not exist).
+[2024-01-31T08:51:37.522+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_analysis_dag, task_id=process_stock_data, execution_date=20240131T084221, start_date=20240131T085133, end_date=20240131T085137
+[2024-01-31T08:51:37.576+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 14 for task process_stock_data (403 POST https://bigquery.googleapis.com/bigquery/v2/projects/dataengineeringfinal-411911/datasets/ibm_stock/tables/ibm_Stock_table/insertAll?prettyPrint=false: Access Denied: Dataset dataengineeringfinal-411911:ibm_stock: Permission bigquery.datasets.get denied on dataset dataengineeringfinal-411911:ibm_stock (or it may not exist).; 215358)
+[2024-01-31T08:51:37.600+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-01-31T08:51:37.624+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

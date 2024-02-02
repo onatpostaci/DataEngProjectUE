@@ -1,0 +1,26 @@
+[2024-01-31T12:32:03.650+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_analysis_dag.get_and_store_gpt_advice manual__2024-01-31T12:26:47.777766+00:00 [queued]>
+[2024-01-31T12:32:03.654+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_analysis_dag.get_and_store_gpt_advice manual__2024-01-31T12:26:47.777766+00:00 [queued]>
+[2024-01-31T12:32:03.654+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 3
+[2024-01-31T12:32:03.664+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): get_and_store_gpt_advice> on 2024-01-31 12:26:47.777766+00:00
+[2024-01-31T12:32:03.666+0000] {standard_task_runner.py:60} INFO - Started process 3559 to run task
+[2024-01-31T12:32:03.668+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'stock_analysis_dag', 'get_and_store_gpt_advice', 'manual__2024-01-31T12:26:47.777766+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/stock_analysis_dag.py', '--cfg-path', '/tmp/tmpz1wzernu']
+[2024-01-31T12:32:03.669+0000] {standard_task_runner.py:88} INFO - Job 55: Subtask get_and_store_gpt_advice
+[2024-01-31T12:32:03.688+0000] {task_command.py:423} INFO - Running <TaskInstance: stock_analysis_dag.get_and_store_gpt_advice manual__2024-01-31T12:26:47.777766+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-01-31T12:32:03.723+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='onatpostac@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_analysis_dag' AIRFLOW_CTX_TASK_ID='get_and_store_gpt_advice' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T12:26:47.777766+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-31T12:26:47.777766+00:00'
+[2024-01-31T12:32:03.727+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/deprojectue/airflow_demo/dags/stock_analysis_dag.py", line 55, in get_and_store_gpt_advice
+    test_prompt = generate_gpt_prompt_with_statistics(descriptive_data)
+  File "/home/deprojectue/airflow_demo/dags/stock_analysis_dag.py", line 31, in generate_gpt_prompt_with_statistics
+    for stat_category, stats in descriptive_data.items():
+AttributeError: 'NoneType' object has no attribute 'items'
+[2024-01-31T12:32:03.729+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_analysis_dag, task_id=get_and_store_gpt_advice, execution_date=20240131T122647, start_date=20240131T123203, end_date=20240131T123203
+[2024-01-31T12:32:03.737+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 55 for task get_and_store_gpt_advice ('NoneType' object has no attribute 'items'; 3559)
+[2024-01-31T12:32:03.759+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-01-31T12:32:03.767+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

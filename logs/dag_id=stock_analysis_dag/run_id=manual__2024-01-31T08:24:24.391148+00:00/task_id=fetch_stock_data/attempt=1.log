@@ -1,0 +1,30 @@
+[2024-01-31T08:24:33.632+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_analysis_dag.fetch_stock_data manual__2024-01-31T08:24:24.391148+00:00 [queued]>
+[2024-01-31T08:24:33.641+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_analysis_dag.fetch_stock_data manual__2024-01-31T08:24:24.391148+00:00 [queued]>
+[2024-01-31T08:24:33.641+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2024-01-31T08:24:33.657+0000] {taskinstance.py:2192} INFO - Executing <Task(SimpleHttpOperator): fetch_stock_data> on 2024-01-31 08:24:24.391148+00:00
+[2024-01-31T08:24:33.662+0000] {standard_task_runner.py:60} INFO - Started process 214054 to run task
+[2024-01-31T08:24:33.668+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'stock_analysis_dag', 'fetch_stock_data', 'manual__2024-01-31T08:24:24.391148+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/stock_analysis_dag.py', '--cfg-path', '/tmp/tmpv6vytpu2']
+[2024-01-31T08:24:33.668+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask fetch_stock_data
+[2024-01-31T08:24:33.714+0000] {task_command.py:423} INFO - Running <TaskInstance: stock_analysis_dag.fetch_stock_data manual__2024-01-31T08:24:24.391148+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-01-31T08:24:33.971+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='onatpostac@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_analysis_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T08:24:24.391148+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-31T08:24:24.391148+00:00'
+[2024-01-31T08:24:33.972+0000] {http.py:169} INFO - Calling HTTP method
+[2024-01-31T08:24:33.977+0000] {base.py:83} INFO - Using connection ID 'alpha_vantage_api' for task execution.
+[2024-01-31T08:24:34.005+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/providers/http/operators/http.py", line 166, in execute
+    return self.execute_sync(context=context)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/providers/http/operators/http.py", line 170, in execute_sync
+    response = self.hook.run(self.endpoint, self.data, self.headers, self.extra_options)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/providers/http/operators/http.py", line 150, in hook
+    hook = conn.get_hook(
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/models/connection.py", line 365, in get_hook
+    hook_class = import_string(hook.hook_class_name)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/utils/module_loading.py", line 35, in import_string
+    module_path, class_name = dotted_path.rsplit(".", 1)
+AttributeError: 'NoneType' object has no attribute 'rsplit'
+[2024-01-31T08:24:34.009+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_analysis_dag, task_id=fetch_stock_data, execution_date=20240131T082424, start_date=20240131T082433, end_date=20240131T082434
+[2024-01-31T08:24:34.021+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 10 for task fetch_stock_data ('NoneType' object has no attribute 'rsplit'; 214054)
+[2024-01-31T08:24:34.040+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-01-31T08:24:34.060+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

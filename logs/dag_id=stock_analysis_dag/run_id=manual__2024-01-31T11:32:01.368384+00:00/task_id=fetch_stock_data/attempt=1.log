@@ -1,0 +1,15 @@
+[2024-01-31T11:32:13.149+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_analysis_dag.fetch_stock_data manual__2024-01-31T11:32:01.368384+00:00 [queued]>
+[2024-01-31T11:32:13.153+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_analysis_dag.fetch_stock_data manual__2024-01-31T11:32:01.368384+00:00 [queued]>
+[2024-01-31T11:32:13.153+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2024-01-31T11:32:13.164+0000] {taskinstance.py:2192} INFO - Executing <Task(SimpleHttpOperator): fetch_stock_data> on 2024-01-31 11:32:01.368384+00:00
+[2024-01-31T11:32:13.167+0000] {standard_task_runner.py:60} INFO - Started process 2650 to run task
+[2024-01-31T11:32:13.168+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'stock_analysis_dag', 'fetch_stock_data', 'manual__2024-01-31T11:32:01.368384+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/stock_analysis_dag.py', '--cfg-path', '/tmp/tmp4518jrhu']
+[2024-01-31T11:32:13.169+0000] {standard_task_runner.py:88} INFO - Job 27: Subtask fetch_stock_data
+[2024-01-31T11:32:13.188+0000] {task_command.py:423} INFO - Running <TaskInstance: stock_analysis_dag.fetch_stock_data manual__2024-01-31T11:32:01.368384+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-01-31T11:32:13.226+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='onatpostac@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_analysis_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_data' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T11:32:01.368384+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-31T11:32:01.368384+00:00'
+[2024-01-31T11:32:13.227+0000] {http.py:169} INFO - Calling HTTP method
+[2024-01-31T11:32:13.229+0000] {base.py:83} INFO - Using connection ID 'alpha_vantage_api' for task execution.
+[2024-01-31T11:32:13.244+0000] {base.py:83} INFO - Using connection ID 'alpha_vantage_api' for task execution.
+[2024-01-31T11:32:13.811+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=stock_analysis_dag, task_id=fetch_stock_data, execution_date=20240131T113201, start_date=20240131T113213, end_date=20240131T113213
+[2024-01-31T11:32:13.862+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-31T11:32:13.875+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

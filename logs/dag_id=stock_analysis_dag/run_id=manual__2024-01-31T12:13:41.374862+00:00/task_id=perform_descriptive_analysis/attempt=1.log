@@ -1,0 +1,15 @@
+[2024-01-31T12:13:53.022+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_analysis_dag.perform_descriptive_analysis manual__2024-01-31T12:13:41.374862+00:00 [queued]>
+[2024-01-31T12:13:53.026+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_analysis_dag.perform_descriptive_analysis manual__2024-01-31T12:13:41.374862+00:00 [queued]>
+[2024-01-31T12:13:53.027+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2024-01-31T12:13:53.038+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): perform_descriptive_analysis> on 2024-01-31 12:13:41.374862+00:00
+[2024-01-31T12:13:53.041+0000] {standard_task_runner.py:60} INFO - Started process 3122 to run task
+[2024-01-31T12:13:53.043+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'stock_analysis_dag', 'perform_descriptive_analysis', 'manual__2024-01-31T12:13:41.374862+00:00', '--job-id', '39', '--raw', '--subdir', 'DAGS_FOLDER/stock_analysis_dag.py', '--cfg-path', '/tmp/tmpjyzl2ytn']
+[2024-01-31T12:13:53.044+0000] {standard_task_runner.py:88} INFO - Job 39: Subtask perform_descriptive_analysis
+[2024-01-31T12:13:53.063+0000] {task_command.py:423} INFO - Running <TaskInstance: stock_analysis_dag.perform_descriptive_analysis manual__2024-01-31T12:13:41.374862+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-01-31T12:13:53.101+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='onatpostac@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='stock_analysis_dag' AIRFLOW_CTX_TASK_ID='perform_descriptive_analysis' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T12:13:41.374862+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-01-31T12:13:41.374862+00:00'
+[2024-01-31T12:13:53.116+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-01-31T12:13:53.117+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-01-31T12:13:53.400+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-31T12:13:53.403+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=stock_analysis_dag, task_id=perform_descriptive_analysis, execution_date=20240131T121341, start_date=20240131T121353, end_date=20240131T121353
+[2024-01-31T12:13:53.455+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-31T12:13:53.466+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

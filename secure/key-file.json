@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "dataengineeringfinal-411911",
+  "private_key_id": "809751b259216f0a9f994ad6d87f48b3bdb2e75b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCn7cYTD/T3St5p\nFtoNmACf6oi2Li6V7xHTq4g6H5zVhrIBY1s0/Ai3kPGkSPc0vhHZOv2wmre1Xyy0\n/0+K8LSOoDih/oY3QM5gCJv3D/8dqG9apHeuOzwYHO1NQ3AOHM0ppXADcU8756KO\ng5u5+8J3rZpX2bwlvayu5bt2SbVBwMtBQWtBUgaDOomdCiunXAPiENtnNuHwCTPI\nw+GNwAACNHoa7tYqzuwwiGJLMdxnB2F73iQIKZP0masZRK2PeHGQ76ZU6e0FBKho\ntxgdOFo+yXSr7jAad2PcSLfmY9eCpa80eYXFd13CwajURNR8dKAhTZy9v+ncgwsC\neYFN/nApAgMBAAECggEARzDquXcY02OmkWeyLnQjw6fSqGVAs6iD5rgACyAOxYkS\nWrtL1dUJPwUQJCUYw//WIkE7fozA1//OvLbF+nGcIiDzkV2NecwcEaNkt2NNNL4M\n4yD5aeBL1C8jPQ+baCg2o/KyX4tAW3WSORe7Q6fjJAhxd8/jTx6vn//drsKFuKc6\ntbhO/IC5r3P/hDFZVMMD0ataK9p/sN+1117tH2QZ+Al5jDONyLVaa2YCeBPGyDcW\nJTvRyvScgfbZgZPiqVkkLGdX5zV4WV4bqn4F40WG0wEVhokLaZz8EASxu5xEzh3Q\nYTSgk0LddBCZH+k1TD1NGolfaiePkpMVY6/Vm6uKtwKBgQDXeBh09ulilV9yGgTo\nz0TmXZHBzmJ0S9lHMBxdiLw7a6Ds7VtR8D78Zeku37IyV8s9FaLyo6+UIEWWk1kM\nWnTHl+i4NXOKWijtv71bW+FyepY/6ZAkiZiqGG/8RBoazYvnlAM1ES7gHeDmflA/\nuAgEbC8LD9d29E6joijRwQncRwKBgQDHhGBmw6tC3IzQUAt2RFkjYXHIUBnwZlyK\noGounaKR1L6TcSbKTd+tz8TDa/UGjitrfOANKPyRbz8XOTkmfdSgMjk0PxA5OVA2\nqGzxPZszCm0X6dSp1Jlm17pwdAmvo2Y5gPMrGRAd8BU+2bbHvE5DVieMdGX+VpQ4\nujOHlG04DwKBgGPTbSlLd8dHwyee7GVcGeTMtwneb3jH50t2+71N6z9wVudN9IAa\n2WOgZ49i7jEqwat0ScE2mtL6vKLNc3Uot2/9bkFh6jzQFqRHsBgSknmyV8gWksSK\nxyMPHVr3xkxirI3G4lGEu33z+c1v+gf7YCOEZ6stVLr05zYim9zKHaJjAoGBAIpX\nTYiz8BJCXxkqB2iP58bSkFS2xeWc9Fni9P0xrEG15BbUBHOOH6SjRenC93j+Jzk2\nsxws6UPmgTaXJPt9kGsrp+KEP7mN9gKQMknrz6tKdW55Yk4H7f4TY2EJ9JVmlUEW\nGoYtsLExgWm9CDHibdne6TlIlFgQrGHRKl2+GyUdAoGBAIvOvZhHS7X/fKfXpZMz\nJPxoyjMXnd6dupf6MlMzRwDbDqC7yNo4DDjBloPfdwCWea2ihjBopo29yFmJpc+A\neBTZeHXxoBIxuiyfvhyH5MHs2m57LM2lQpg8jK0PkOplyDXAWa6O1dm8nCJEfkBs\nlwfZLMv02GvMQFDxoljy7yKr\n-----END PRIVATE KEY-----\n",
+  "client_email": "airflow-project-2@dataengineeringfinal-411911.iam.gserviceaccount.com",
+  "client_id": "114724122840188519641",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/airflow-project-2%40dataengineeringfinal-411911.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

@@ -1,0 +1,29 @@
+[2024-02-01T00:16:41.679+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_data_into_bigquery_dag.load_data_to_bq manual__2024-02-01T00:16:38.607196+00:00 [queued]>
+[2024-02-01T00:16:41.682+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_data_into_bigquery_dag.load_data_to_bq manual__2024-02-01T00:16:38.607196+00:00 [queued]>
+[2024-02-01T00:16:41.682+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2024-02-01T00:16:41.693+0000] {taskinstance.py:2192} INFO - Executing <Task(GCSToBigQueryOperator): load_data_to_bq> on 2024-02-01 00:16:38.607196+00:00
+[2024-02-01T00:16:41.696+0000] {standard_task_runner.py:60} INFO - Started process 14299 to run task
+[2024-02-01T00:16:41.697+0000] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'load_data_into_bigquery_dag', 'load_data_to_bq', 'manual__2024-02-01T00:16:38.607196+00:00', '--job-id', '129', '--raw', '--subdir', 'DAGS_FOLDER/load_data_into_bigquery_dag.py', '--cfg-path', '/tmp/tmp9_wcneyz']
+[2024-02-01T00:16:41.698+0000] {standard_task_runner.py:88} INFO - Job 129: Subtask load_data_to_bq
+[2024-02-01T00:16:41.720+0000] {task_command.py:423} INFO - Running <TaskInstance: load_data_into_bigquery_dag.load_data_to_bq manual__2024-02-01T00:16:38.607196+00:00 [running]> on host de-airflow-vm-instance-1.europe-west10-a.c.dataengineeringfinal-411911.internal
+[2024-02-01T00:16:41.754+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='load_data_into_bigquery_dag' AIRFLOW_CTX_TASK_ID='load_data_to_bq' AIRFLOW_CTX_EXECUTION_DATE='2024-02-01T00:16:38.607196+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-02-01T00:16:38.607196+00:00'
+[2024-02-01T00:16:41.756+0000] {connection.py:234} WARNING - Connection schemes (type: google_cloud_platform) shall not contain '_' according to RFC3986.
+[2024-02-01T00:16:41.757+0000] {base.py:83} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2024-02-01T00:16:41.757+0000] {gcs_to_bigquery.py:379} INFO - Using existing BigQuery table for storing data...
+[2024-02-01T00:16:41.758+0000] {gcs_to_bigquery.py:383} INFO - Executing: {'load': {'autodetect': True, 'createDisposition': 'CREATE_IF_NEEDED', 'destinationTable': {'projectId': 'dataengineeringfinal-411911', 'datasetId': 'ibm_stock', 'tableId': 'raw_stock_data'}, 'sourceFormat': 'CSV', 'sourceUris': ['gs://de-final-bucket-1/processed_stock_data/2024-02-01.csv'], 'writeDisposition': 'WRITE_TRUNCATE', 'ignoreUnknownValues': False, 'schema': {'fields': [{'name': 'date', 'type': 'STRING', 'mode': 'NULLABLE'}, {'name': 'open', 'type': 'FLOAT', 'mode': 'NULLABLE'}, {'name': 'high', 'type': 'FLOAT', 'mode': 'NULLABLE'}, {'name': 'low', 'type': 'FLOAT', 'mode': 'NULLABLE'}, {'name': 'close', 'type': 'FLOAT', 'mode': 'NULLABLE'}, {'name': 'volume', 'type': 'INTEGER', 'mode': 'NULLABLE'}, {'name': 'moving_average', 'type': 'FLOAT', 'mode': 'NULLABLE'}, {'name': 'daily_return', 'type': 'FLOAT', 'mode': 'NULLABLE'}, {'name': 'volatility', 'type': 'FLOAT', 'mode': 'NULLABLE'}]}, 'skipLeadingRows': 1, 'fieldDelimiter': ',', 'quote': None, 'allowQuotedNewlines': False, 'encoding': 'UTF-8'}}
+[2024-02-01T00:16:41.758+0000] {bigquery.py:1596} INFO - Inserting job airflow_load_data_into_bigquery_dag_load_data_to_bq_2024_02_01T00_16_38_607196_00_00_96d0279766924b06ddc1df06cb955220
+[2024-02-01T00:16:42.258+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 442, in execute
+    job.result(timeout=self.result_timeout, retry=self.result_retry)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/cloud/bigquery/job/base.py", line 952, in result
+    return super(_AsyncJob, self).result(timeout=timeout, **kwargs)
+  File "/home/deprojectue/miniconda3/envs/airflow_demo/lib/python3.9/site-packages/google/api_core/future/polling.py", line 261, in result
+    raise self._exception
+google.api_core.exceptions.NotFound: 404 Not found: URI gs://de-final-bucket-1/processed_stock_data/2024-02-01.csv
+[2024-02-01T00:16:42.260+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=load_data_into_bigquery_dag, task_id=load_data_to_bq, execution_date=20240201T001638, start_date=20240201T001641, end_date=20240201T001642
+[2024-02-01T00:16:42.270+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 129 for task load_data_to_bq (404 Not found: URI gs://de-final-bucket-1/processed_stock_data/2024-02-01.csv; 14299)
+[2024-02-01T00:16:42.310+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-02-01T00:16:42.322+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
